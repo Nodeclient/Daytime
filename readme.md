@@ -16,7 +16,7 @@ server.Listen;
 ```
 
 ```bash
-TCP:> 70701 20-05-20 03:22:50 0 0 0 701 UTC(banner)
+Tcp Port(13) Response :> 70701 20-05-20 03:22:50 0 0 0 701 UTC(banner)
 ```
 
 RFC Document
