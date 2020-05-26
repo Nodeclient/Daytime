@@ -36,15 +36,14 @@ class TIME_UTC {
         const mn = String(uarr[4]);
         const se = String(uarr[5]);
         const ms = String(uarr[6]);
-        const ShortStamp = String(new Date(utc)
-            .valueOf()).slice(8, String(new Date(utc).valueOf()).length);
+        const ShortStamp = String(Math.floor((new Date(utc).valueOf() / (1000 * 60 * 60 * 24)) - 0.5) + (2440588)).slice(2, 7);
         var sDayTime = String(ShortStamp).concat(" ")
             .concat(year).concat("-").concat(month).concat("-")
             .concat(day).concat(" ").concat(hr).concat(":")
             .concat(mn).concat(":").concat(se).concat(" ")
             .concat("0 0 0").concat(" ").concat(ms)
             .concat(" ").concat("UTC(" + this.bn + ")");
-        return String(sDayTime).concat("\r\n");
+        return "\r" + String(sDayTime).concat(" ").concat("*").concat("\n\r");
     }
 }
 class DayTime {

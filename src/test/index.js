@@ -20,5 +20,5 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const nist = __importStar(require("../lib/daytime"));
-let server = new nist.DayTime("test");
+let server = new nist.DayTime("NIST");
 server.Listen;
