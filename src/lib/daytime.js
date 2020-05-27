@@ -36,14 +36,14 @@ class TIME_UTC {
         const mn = String(uarr[4]);
         const se = String(uarr[5]);
         const ms = String(uarr[6]);
-        const ShortStamp = String(Math.floor((new Date(utc).valueOf() / (1000 * 60 * 60 * 24)) - 0.5) + (2440588)).slice(2, 7);
-        var sDayTime = String(ShortStamp).concat(" ")
+        const Shortjj = String(Math.floor((new Date(utc).valueOf() / (1000 * 60 * 60 * 24)) - 1) + (2440588)).slice(2, 7);
+        var sDayTime = String(Shortjj).concat(" ")
             .concat(year).concat("-").concat(month).concat("-")
             .concat(day).concat(" ").concat(hr).concat(":")
             .concat(mn).concat(":").concat(se).concat(" ")
-            .concat("0 0 0").concat(" ").concat(ms)
+            .concat("50 0 0").concat(" ").concat(ms)
             .concat(" ").concat("UTC(" + this.bn + ")");
-        return "\r" + String(sDayTime).concat(" ").concat("*").concat("\n\r");
+        return "\n" + String(sDayTime).concat(" ").concat("*").concat(" ").concat("\r\n");
     }
 }
 class DayTime {
@@ -67,7 +67,7 @@ class DayTime {
 exports.DayTime = DayTime;
 var ntsmsg = (s, b) => {
     const date = new TIME_UTC(b);
-    return s.write(date.getUTC);
+    return s.write(new Buffer(date.getUTC, "ascii"));
 };
 var ntserr = (s) => {
     console.log(s.message);
