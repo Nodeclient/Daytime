@@ -1,4 +1,4 @@
-## "Simple TCP Based Daytime Service"
+## "Simple TCP Based Internet Time Service"
 [![NPM version][npm-image]][npm-url]
 ![npm](https://img.shields.io/npm/dt/daytime-service)
 
