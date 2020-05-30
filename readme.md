@@ -16,7 +16,8 @@ server.Listen;
 ```
 
 ```bash
-Tcp Response :> 58996 20-05-21 10:17:18 0 0 0 131.2 UTC(NIST) *
+Format : "JJJJJ YR-MO-DA HH:MM:SS TT L DUT1 msADV UTC(NIST) OTM"
+TCP Response :> 58996 20-05-21 10:17:18 0 0 0 131.2 UTC(NIST) *
 ```
 
 ### RFC
