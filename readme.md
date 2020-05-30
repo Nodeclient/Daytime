@@ -19,8 +19,10 @@ server.Listen;
 Tcp Response :> 58996 20-05-21 10:17:18 0 0 0 131.2 UTC(NIST) *
 ```
 
-RFC Document
+### RFC
 > https://tools.ietf.org/html/rfc867
+### Document
+> https://www.nist.gov/pml/time-and-frequency-division/services/automated-computer-time-service-acts
 
    [npm-image]: https://img.shields.io/npm/v/daytime-service.svg?style=flat 
    [npm-url]: https://npmjs.org/package/daytime-service 
