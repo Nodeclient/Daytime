@@ -1,7 +1,7 @@
 {
-  "name": "daytime-service",
-  "version": "1.0.4",
-  "description": "Simple TCP Based Daytime Service",
+  "name": "daytime",
+  "version": "1.0.5",
+  "description": "NodeAuth2 DayTime Service (TCP)",
   "main": "index.js",
   "scripts": {
     "ts": "ts-node test/index.ts",
@@ -9,18 +9,11 @@
     "dev": "nodemon test/index.ts",
     "build": "tsc -p ."
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Nodeclient/Daytime"
-  },
   "keywords": [
-    "time",
-    "daytime",
-    "nist",
-    "service"
+    "time","daytime","nist","service"
   ],
   "author": "Leo Zacharry",
-  "license": "MIT",
+  "license": "ISC",
   "devDependencies": {
     "@types/node": "^14.0.5"
   }

@@ -1,6 +1,9 @@
-## "Simple TCP Based Daytime Service"
+### NodeAuth2 DayTime Service (TCP)
 [![NPM version][npm-image]][npm-url]
 ![npm](https://img.shields.io/npm/dt/daytime-service)
+
+### NodeAuth2
+> https://www.npmjs.com/package/nodeauth2
 
 ### Install Daytime
 ```bash
@@ -9,21 +12,14 @@ npm i daytime-service --save
 
 ```js
 const nist = require("daytime-service");
-let server = new nist.default.DayTime("NIST");
-
+let server = new nist.default.DayTime("NA2");
 //TCP SERVICE (PORT 13)
 server.Listen;
 ```
 
 ```bash
-Format : "JJJJJ YR-MO-DA HH:MM:SS TT L DUT1 msADV UTC(NIST) OTM"
-TCP Response :> 58996 20-05-21 10:17:18 0 0 0 131.2 UTC(NIST) *
+Tcp Response :> 58996 20-05-21 10:17:18 523 UTC(NA2) *
 ```
-
-### RFC
-> https://tools.ietf.org/html/rfc867
-### Document
-> https://www.nist.gov/pml/time-and-frequency-division/services/automated-computer-time-service-acts
 
    [npm-image]: https://img.shields.io/npm/v/daytime-service.svg?style=flat 
    [npm-url]: https://npmjs.org/package/daytime-service 
