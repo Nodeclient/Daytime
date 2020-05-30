@@ -9,7 +9,7 @@ npm i daytime-service --save
 
 ```js
 const nist = require("daytime-service");
-let server = new nist.default.DayTime("banner");
+let server = new nist.default.DayTime("NIST");
 
 //TCP SERVICE (PORT 13)
 server.Listen;
