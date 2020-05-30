@@ -20,5 +20,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const nist = __importStar(require("../lib/daytime"));
+//The label UTC(NIST) indicates that you are receiving Coordinated Universal Time (UTC) from the National Institute of Standards and Technology (NIST).
 let server = new nist.DayTime("NIST");
 server.Listen;

@@ -1,4 +1,4 @@
-## "Simple TCP Based Internet Time Service"
+## "Simple TCP Based Daytime Service"
 [![NPM version][npm-image]][npm-url]
 ![npm](https://img.shields.io/npm/dt/daytime-service)
 
@@ -14,16 +14,12 @@ let server = new nist.default.DayTime("banner");
 //TCP SERVICE (PORT 13)
 server.Listen;
 ```
-## Format
-> JJJJJ YR-MO-DA HH:MM:SS TT L UT1 msADV UTC(NIST) <OTM>
-   
+
 ```bash
-Tcp Port(13) :> 58996 20-05-23 11:17:18 0 0 0 031 UTC(NIST) *
+Tcp Port(13) Response :> 58996 20-05-21 10:17:18 0 0 0 031 UTC(NIST) *
 ```
-## Computer Time Synchronization Document
-> https://tf.nist.gov/service/pdf/computertime.pdf
-   
-### RFC Document
+
+RFC Document
 > https://tools.ietf.org/html/rfc867
 
    [npm-image]: https://img.shields.io/npm/v/daytime-service.svg?style=flat 

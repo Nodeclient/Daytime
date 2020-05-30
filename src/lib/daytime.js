@@ -22,42 +22,37 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DayTime = void 0;
 const net = __importStar(require("net"));
 class TIME_UTC {
-    constructor(banner) {
-        this.bn = banner || "NIST";
+    constructor(flag) {
+        this.bn = flag || "NIST";
     }
     get getUTC() {
-        const local = new Date();
-        const utc = local.toISOString();
-        const uarr = utc.split(/\D/);
-        const year = String(uarr[0]).slice(2, utc.length);
+        var now = new Date;
+        var local = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds()));
+        const uarr = local.toISOString().split(/\D/);
+        const Shortyr = String(local.getFullYear()).slice(2, 4);
         const month = String(uarr[1]);
         const day = String(uarr[2]);
         const hr = String(uarr[3]);
         const mn = String(uarr[4]);
         const se = String(uarr[5]);
-        const ms = String(uarr[6]);
-        const Shortjj = String(Math.floor((new Date(utc).valueOf() / (1000 * 60 * 60 * 24)) - 1) + (2440588)).slice(2, 7);
-        var sDayTime = String(Shortjj).concat(" ")
-            .concat(year).concat("-").concat(month).concat("-")
-            .concat(day).concat(" ").concat(hr).concat(":")
-            .concat(mn).concat(":").concat(se).concat(" ")
-            .concat("50 0 0").concat(" ").concat(ms)
-            .concat(" ").concat("UTC(" + this.bn + ")");
-        return "\n" + String(sDayTime).concat(" ").concat("*").concat(" ").concat("\r\n");
+        const ms = String(local.valueOf()).slice(9, 12).concat(".").concat(String(local.valueOf()).slice(12, 13));
+        const Shortjj = String(Math.floor((local.valueOf() / (1000 * 60 * 60 * 24)) - 1) + (2440588)).slice(2, 7);
+        var sDayTime = String(Shortjj).concat(" ").concat(Shortyr).concat("-").concat(month).concat("-").concat(day).concat(" ").concat(hr).concat(":").concat(mn).concat(":").concat(se).concat(" ").concat("50 0 0").concat(" ").concat(ms).concat(" ").concat("UTC(" + this.bn + ")");
+        return "\n" + String(sDayTime).concat(" ").concat("*").concat("\n");
     }
 }
 class DayTime {
-    constructor(banner) {
+    constructor(flag) {
         this.port = 13;
-        this.bnn = banner;
+        this.bnn = flag;
     }
     get Listen() {
-        const banner = this.bnn;
+        const tFlag = this.bnn;
         return net.createServer((s) => {
             s.setTimeout(500);
-            ntsmsg(s, banner);
+            ntsmsg(s, tFlag);
         }).listen(this.port, function () {
-            const date = new TIME_UTC(banner);
+            const date = new TIME_UTC(tFlag);
             console.log(`(Daytime Service) Port:13\r\n${date.getUTC}`);
         }).on('error', function (err) {
             ntserr(err);
@@ -67,7 +62,7 @@ class DayTime {
 exports.DayTime = DayTime;
 var ntsmsg = (s, b) => {
     const date = new TIME_UTC(b);
-    return s.write(new Buffer(date.getUTC, "ascii"));
+    return s.write(Buffer.from(date.getUTC));
 };
 var ntserr = (s) => {
     console.log(s.message);
