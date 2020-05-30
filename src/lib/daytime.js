@@ -35,10 +35,11 @@ class TIME_UTC {
         const hr = String(uarr[3]);
         const mn = String(uarr[4]);
         const se = String(uarr[5]);
-        const ms = String(local.valueOf()).slice(9, 12).concat(".").concat(String(local.valueOf()).slice(12, 13));
+        const msAdv = String("0.45");
         const Shortjj = String(Math.floor((local.valueOf() / (1000 * 60 * 60 * 24)) - 1) + (2440588)).slice(2, 7);
-        var sDayTime = String(Shortjj).concat(" ").concat(Shortyr).concat("-").concat(month).concat("-").concat(day).concat(" ").concat(hr).concat(":").concat(mn).concat(":").concat(se).concat(" ").concat("50 0 0").concat(" ").concat(ms).concat(" ").concat("UTC(" + this.bn + ")");
-        return "\r\n" + String(sDayTime).concat(" ").concat("*").concat(" ").concat("\r\n");
+        var sDayTime = String(Shortjj).concat(" ").concat(Shortyr).concat("-").concat(month).concat("-").concat(day).concat(" ").concat(hr).concat(":").concat(mn).concat(":").concat(se).concat(" ")
+            .concat("50 1 0").concat(" ").concat(msAdv).concat(" ").concat("UTC(" + this.bn + ")");
+        return "\n" + String(sDayTime).concat(" ").concat("*").concat("\r\n");
     }
 }
 class DayTime {
