@@ -16,7 +16,7 @@ server.Listen;
 ```
 
 ```bash
-Tcp Port(13) Response :> 58996 20-05-21 10:17:18 0 0 0 031 UTC(NIST) *
+Tcp Response :> 58996 20-05-21 10:17:18 0 0 0 131.2 UTC(NIST) *
 ```
 
 RFC Document
