@@ -1,6 +1,6 @@
 {
-  "name": "daytime",
-  "version": "1.0.5",
+  "name": "daytime-service",
+  "version": "1.0.6",
   "description": "NodeAuth2 DayTime Service (TCP)",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,10 @@
     "start": "node dist/index.js",
     "dev": "nodemon test/index.ts",
     "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nodeclient/Daytime"
   },
   "keywords": [
     "time","daytime","nist","service"

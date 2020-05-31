@@ -46,6 +46,11 @@ class DayTime {
         this.port = 13;
         this.bnn = flag;
     }
+    get GetTime() {
+        const tFlag = this.bnn;
+        const date = new TIME_UTC(tFlag);
+        return date.getUTC;
+    }
     get Listen() {
         const tFlag = this.bnn;
         return net.createServer((s) => {

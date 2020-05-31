@@ -19,7 +19,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const nist = __importStar(require("../lib/daytime"));
-//nodeauth time Service listen
-let server = new nist.DayTime("NA2");
-server.Listen;
+const ns = __importStar(require("../lib/daytime"));
+let daytime = new ns.DayTime("NA2");
+
+/* print date format */
+console.log( daytime.GetTime );
+
+/* listen server */
+// daytime.Listen

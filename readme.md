@@ -11,11 +11,19 @@ npm i daytime-service --save
 ```
 
 ```js
-const nist = require("daytime-service");
-let server = new nist.default.DayTime("NA2");
-//TCP SERVICE (PORT 13)
-server.Listen;
+import * as ns from '../lib/daytime';
+let daytime = new ns.DayTime("NA2");
 ```
+
+```js 
+/* print only */
+    console.log( daytime.GetTime );
+```  
+
+```js
+/* listen tcp server */
+    daytime.Listen
+ ```  
 
 ```bash
 Tcp Response :> 58996 20-05-21 10:17:18 523 UTC(NA2) *
