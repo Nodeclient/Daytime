@@ -1,27 +1,24 @@
 {
-  "name": "nodeauth2",
-  "version": "1.0.5",
-  "description": "Time Services based simple one-time password genaretor.",
+  "name": "daytime-service",
+  "version": "1.0.6",
+  "description": "NodeAuth2 DayTime Service (TCP)",
   "main": "index.js",
   "scripts": {
-    "ts": "ts-node src/index.ts",
+    "ts": "ts-node test/index.ts",
     "start": "node dist/index.js",
-    "dev": "nodemon src/index.ts",
+    "dev": "nodemon test/index.ts",
     "build": "tsc -p ."
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nodeclient/NodeAuth2"
+    "url": "https://github.com/Nodeclient/Daytime"
   },
   "keywords": [
-    "auth",
-    "custom otp",
-    "password",
-    "generate"
+    "time","daytime","nist","service"
   ],
   "author": "Leo Zacharry",
-  "license": "MIT",
+  "license": "ISC",
   "devDependencies": {
-    "@types/node": "^14.0.4"
+    "@types/node": "^14.0.5"
   }
 }

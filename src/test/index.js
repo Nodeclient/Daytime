@@ -1,35 +1,29 @@
 "use strict";
-/*
-    Expiration Time (Second) Types <number>
-    SecretKey  Types <string>
-    Gen-Code : (100 New Token),(101 Already Generated),(102 Expired)
-*/
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-/* NodeAuth2 DayTime Service (Npm Package) tcp,http support
-    https://www.npmjs.com/package/daytime-service
-*/
-/* Nist DayTime Services
-    https://tf.nist.gov/tf-cgi/servers.cgi
-*/
-process.env.TOKEN_LENGTH = "6"; // Token length [123456] Min(4) ~ Max(32)
-process.env.TOKEN_PREFIX = "-"; // Custom token prefix (-) (*) (🔑)
-const na2 = require("../lib/authentication"); // Import NA2 Module
-const NodeAuth2 = new na2.Authentication(20); // Token Expiration Time 20 sec
+const ns = __importStar(require("../lib/daytime"));
+let daytime = new ns.DayTime("NA2");
 
-/* SET TIME SERVICE
-    HTTP = <SINGLE URL> (https,http)
-    TCP  = <MULTIPLE ADRESS> (ip,domain)
-*/
+/* print date format */
+console.log( daytime.GetTime );
 
-//NodeAuth2.http = "http://192.168.2.38:3000/daytime"
-NodeAuth2.tcp ="time.nist.gov, time.example.com , 192.168.2.1"
-
-/* GENERATE */
-NodeAuth2.AuthGenerate("this is your secret pass phrase").then( t => {
-    console.log("Na2", t);
-}); 
-
-/* CHECK */
-// NodeAuth2.AuthCheck("this is your secret pass phrase","614296").then( t =>{
-//     console.log("Na2", t);
-// });
+/* listen server */
+// daytime.Listen
