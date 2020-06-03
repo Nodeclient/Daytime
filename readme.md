@@ -14,7 +14,7 @@ npm i daytime-service --save
 import * as ns from '../lib/daytime';
 let daytime = new ns.DayTime("NA2");
 ```
-```TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) *```
+
 ```js 
 /* print only */
     console.log( daytime.GetTime );
@@ -24,7 +24,8 @@ let daytime = new ns.DayTime("NA2");
 /* listen tcp server */
     daytime.Listen
  ```  
-
+ 
+```TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) *```
 ```bash
 Tcp Response :> 58996 20-05-21 10:17:18 523 UTC(NA2) *
 ```
