@@ -14,7 +14,7 @@ npm i daytime-service --save
 import * as ns from '../lib/daytime';
 let daytime = new ns.DayTime("NA2");
 ```
-
+```TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) *```
 ```js 
 /* print only */
     console.log( daytime.GetTime );
