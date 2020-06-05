@@ -1,4 +1,4 @@
-### NodeAuth2 DayTime Service (TCP)
+### NodeAuth2 Time Service
 [![NPM version][npm-image]][npm-url]
 ![npm](https://img.shields.io/npm/dt/daytime-service)
 
