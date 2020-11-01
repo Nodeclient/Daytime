@@ -27,7 +27,7 @@ let daytime = new ns.DayTime("NA2");
  
 ```TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) *```
 ```bash
-Tcp Response :> 58996 20-05-21 10:17:18 523 UTC(NA2) *
+   OUTPUT :> 58996 20-05-21 10:17:18 523 UTC(NA2) *
 ```
 
    [npm-image]: https://img.shields.io/npm/v/daytime-service.svg?style=flat 
